@@ -12,7 +12,8 @@ module DropboxApi::Endpoints
       body = content
       headers = {
         'Dropbox-API-Arg' => JSON.dump(params),
-        'Content-Type' => 'application/octet-stream'
+        'Content-Type' => 'application/octet-stream',
+        'Transfer-Encoding' =>  'chunked'
       }
 
       return body, headers
